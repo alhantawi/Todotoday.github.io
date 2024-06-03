@@ -8,9 +8,26 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="textH">Simple task , Simple life ✨  </h2>
+      
+      <div class="flex-container">
+        <h2 class="textH">Master Your Day
+          <br>Todo Today, Triumph Tomorrow</h2>
+        <div class="quote-box">
+<h2>Quote of the day
+        <span> </span>  
+          </h2>
+        <br>
+  <blockquote id="quote">Loading...</blockquote>
+<div>
+  <br>
+<button onclick="getQuote(url)">New Quote</button>
+  <button id="copyButton">Copy to Clipboard</button>
+</div>
+</div>
+   
+     
         <div class="todo-app">
-            <h2>TO-DO List App <img src="To-Do-Img/images/icon.png" > </h2>
+            <h2>TO-DO List App 📝 </h2>
             <div class="row">
                <input type="text" id="input-box" placeholder="Add your Task ">
                <button onclick="addTask()">Add</button> 
@@ -19,8 +36,10 @@
         
             </ul>
     </div>
-    
-    </div>
+      
+
+      </div>
+  </div>
     <script src="script.js"></script>
 </body>
 </html>
