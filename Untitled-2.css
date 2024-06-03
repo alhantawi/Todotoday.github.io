@@ -13,6 +13,34 @@
     
 }
 
+.flex-container {
+
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    
+     
+    /* flex-flow: column; */ 
+    flex-direction: column;  
+    height: 100%;
+    padding: 15px;
+    gap: 25px;
+
+  }
+
+.textH{
+  display: flex;
+color:white;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 2px 2px 0px #Ffff;
+          /** TEXT GRADIENT */ color: #e91e63; background-image: -webkit-linear-gradient(0deg, #e91e63 0%, #2196f3 33%, #9c27b0 67%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
+          
+        
+  
+  
+
+}
 .todo-app{
     margin-top: 50px;
     width: 100%;
@@ -30,6 +58,7 @@
     margin-bottom: 20px;
 
 }
+
 .todo-app h2 img{
     width: 30px;
     margin-left: 15px;
@@ -56,6 +85,7 @@ input{
 
 }
 button {
+  margin-bottom:1px;
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -65,13 +95,25 @@ button {
     border-radius: 60px;
 }
 ul li{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     position: relative;
     list-style: none;
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 12px 25px 12px 50px;
     cursor: pointer;
+  word-break: break-all;
+  transition: 0.9s ease;
 
 
+}
+ul li:hover{
+    overflow: visible; 
+    white-space: normal;
+    
+ 
+  
 }
 
 ul li::before{
@@ -80,7 +122,7 @@ ul li::before{
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(To-Do-Img/images/unchecked.png);
+    background: url('https://api.iconify.design/line-md/loading-twotone-loop.svg') no-repeat center center / contain;
     background-size: contain;
     background-position: center;
     top: 12px;
@@ -88,15 +130,34 @@ ul li::before{
 
 }
 ul li.checked{
-    color: #555;
+  z-index: 0;
+    color: #FF8F8F;
     text-decoration: line-through;
 }
 ul li.checked::before{
-    background-image: url(To-Do-Img/images/checked.png);
+  
+  
+    left: 10px;
+  content: "";
+    background: url('https://api.iconify.design/line-md/circle-twotone-to-confirm-circle-twotone-transition.svg?color=%23ff5945') no-repeat center center / contain;
 
 }
 
+ul li.checked::after{
+  z-index: 2;
+  content: "";
+  padding-left:30px;
+  background: url('https://api.iconify.design/icon-park-outline/muscle.svg?color=%23ff5945') no-repeat center center / contain;
+  
+  
+  
+
+}
+
+
+
 ul li span{
+  
     position:absolute;
     right: 0;
     top: 5px;
@@ -112,4 +173,21 @@ ul li span{
 }
 ul li span:hover{
     background: #edeef5;
+}
+
+.quote-box {
+  
+  background: #fff;
+ margin-top:30px;
+  min-width:73%;
+    
+  
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+div.quote-box h2 span::after{
+  content: url('https://api.iconify.design/lucide/quote.svg');
 }
